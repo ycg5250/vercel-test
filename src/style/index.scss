@@ -1,0 +1,161 @@
+@import './variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:link,
+a:focus {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  //-webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none;
+  color: #333333;
+  pointer-events: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.pic-full {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear {
+  clear: both;
+}
+
+input {
+  outline: none;
+}
+
+.text {
+  font-size: 0.14rem;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: var(--gray-1);
+}
+
+// 单行文本溢出显示省略号
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-ellipsis-more {
+  display: -webkit-box;
+  /* 表示盒子对象的子元素的排列方式 */
+  -webkit-box-orient: vertical;
+  /* 限制文本的行数，表示文本第多少行省略 */
+  -webkit-line-clamp: 3;
+  /*  打点展示 */
+  text-overflow: ellipsis;
+  /*超出部分进行隐藏*/
+  overflow: hidden;
+}
+
+// flex布局
+.d-flex {
+  display: flex;
+}
+
+// 纵向排列
+.flex-column {
+  flex-direction: column;
+}
+
+// 横线排列换行
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// 垂直方向对齐
+$flex-jc:(start:flex-start,
+  end:flex-end,
+  center:center,
+  between:space-between,
+  around:space-around,
+  evenly:space-evenly);
+
+// 水平方向对齐
+$flex-ai:(start:flex-start,
+  end:flex-end,
+  center:center,
+  stretch:stretch,
+);
+
+@each $key,
+$value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+@each $key,
+$value in $flex-jc {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 767px) {
+  html {
+    font-size: 8.2465vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 13.33vw;
+    font-size: -webkit-calc(13.33vw);
+    font-size: calc(13.33vw);
+  }
+
+  .text-gray-3 {
+    font-size: 0.2rem;
+
+  }
+}
+
+@media screen and (min-width: 1212px) {
+  html {
+    font-size: 100px;
+  }
+}
