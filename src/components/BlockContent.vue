@@ -1,7 +1,7 @@
 <template>
   <div class="block-content">
     <div class="title-wrap">
-      <span>带宽</span>
+      <span>能量</span>
       <span>(0.1561 kb/TRX)</span>
     </div>
     <div class="container">
